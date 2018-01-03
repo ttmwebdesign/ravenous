@@ -17,13 +17,16 @@ const business = {
 
 const businesses = [business, business, business, business, business, business];
 
-export default BusinessList;
 class App extends Component {
+  searchYelp(term, location, sortBy) {
+    console.log(`Searching Ravenous with ${term}, ${location}, ${sortBy}`)
+  }
+
   render() {
     return (
       <div className="App">
         <h1>ravenous</h1>
-        <SearchBar />
+        <SearchBar searchYelp={this.searchYelp}/>
         <BusinessList businesses={businesses}/> 
       </div>
     );
